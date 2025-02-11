@@ -3,64 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Game Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Game Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-    <img src="your-photo.jpg" alt="Your Photo" class="profile-photo">
-    <h1>Your Name</h1>
-    <p>Game Developer | Unity Expert | 7+ Years of Experience</p>
-</header>
+<div class="container">
+    <header>
+        <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
+        <h1>Funcy Coder</h1>
+        <p>Game Developer | Unity Expert | Mobile Games</p>
+    </header>
 
-<section id="experience">
-    <h2>Experience</h2>
-    <ul>
-        <li><strong>Lead Developer</strong> - Card Game Mobile App (2025)</li>
-        <li><strong>Unity Developer</strong> - 3D Idle Tycoon (2023)</li>
-        <li><strong>Gameplay Programmer</strong> - Metroidvania Platformer (2022)</li>
-    </ul>
-</section>
+    <section class="content-card">
+        <h2>Experience</h2>
+        <p>7 years of programming experience, 3 years with Unity...</p>
+    </section>
 
-<section id="education">
-    <h2>Education</h2>
-    <p>[Your Degree], [Your University]</p>
-</section>
+    <section class="content-card">
+        <h2>Education</h2>
+        <p>Computer Science Degree from XYZ University...</p>
+    </section>
 
-<section id="projects">
-    <h2>Game Projects</h2>
+    <!-- Game Showcase Carousel -->
+    <div class="carousel-container">
+        <button class="carousel-button prev">&lt;</button>
+        <div class="carousel-track-wrapper">
+            <div class="carousel-track">
+                <div class="game-section">
+                    <video src="game1.mp4" controls></video>
+                    <div class="game-description">
+                        <h3>Game Title 1</h3>
+                        <p>Description of the first game...</p>
+                    </div>
+                </div>
 
-    <!-- Game 1 -->
-    <div class="game-section">
-        <video src="game1.mp4" controls></video>
-        <div class="game-description">
-            <h3>Game Title 1</h3>
-            <p>A brief description of the game, highlighting features like mechanics, technologies used, and platform availability.</p>
+                <div class="game-section active">
+                    <video src="game2.mp4" controls></video>
+                    <div class="game-description">
+                        <h3>Game Title 2</h3>
+                        <p>Description of the second game...</p>
+                    </div>
+                </div>
+
+                <div class="game-section">
+                    <img src="game3.jpg" alt="Game Image">
+                    <div class="game-description">
+                        <h3>Game Title 3</h3>
+                        <p>Description of the third game...</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        <button class="carousel-button next">&gt;</button>
     </div>
 
-    <!-- Game 2 -->
-    <div class="game-section">
-        <video src="game2.mp4" controls></video>
-        <div class="game-description">
-            <h3>Game Title 2</h3>
-            <p>Another short description, explaining what makes this game unique.</p>
-        </div>
-    </div>
+    <footer>
+        <p>© 2025 Funcy Coder | <a href="#">GitHub</a> | <a href="#">LinkedIn</a></p>
+    </footer>
+</div>
 
-    <!-- Game 3 (GIF example) -->
-    <div class="game-section">
-        <img src="game3.gif" alt="Game GIF">
-        <div class="game-description">
-            <h3>Game Title 3</h3>
-            <p>A description for a game with an animated GIF.</p>
-        </div>
-    </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const track = document.querySelector(".carousel-track");
+        const wrapper = document.querySelector(".carousel-track-wrapper");
+        const prevButton = document.querySelector(".prev");
+        const nextButton = document.querySelector(".next");
 
-</section>
+        let index = 1;
 
-<footer>
-    <p>© 2025 Your Name | <a href="https://github.com/your-github">GitHub</a></p>
-</footer>
+        function updateCarousel() {
+            const items = document.querySelectorAll(".game-section");
+            const width = items[0].offsetWidth + 20;
+            const centerOffset = (wrapper.offsetWidth / 2) - (items[0].offsetWidth / 2);
+            track.style.transform = `translateX(${centerOffset - index * width}px)`;
+
+            items.forEach((item, i) => {
+                item.classList.toggle("active", i === index);
+            });
+
+            prevButton.style.display = index > 0 ? "block" : "none";
+            nextButton.style.display = index < items.length - 1 ? "block" : "none";
+        }
+
+        nextButton.addEventListener("click", function() {
+            const items = document.querySelectorAll(".game-section");
+            if (index < items.length - 1) {
+                index++;
+                updateCarousel();
+            }
+        });
+
+        prevButton.addEventListener("click", function() {
+            if (index > 0) {
+                index--;
+                updateCarousel();
+            }
+        });
+
+        updateCarousel();
+    });
+</script>
 </body>
 </html>

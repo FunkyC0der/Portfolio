@@ -1,0 +1,187 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* Color Palette from Kawsar Design */
+:root {
+    --background-color: #EAE6DF;
+    --text-color: #1A1A1A;
+    --accent-color: #B49C89;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --grain-overlay: url('assets/grain.jpeg');
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+    color: var(--text-color);
+    position: relative;
+}
+
+/* Grain Effect with Different Blend Mode */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--grain-overlay);
+    background-repeat: repeat;
+    background-size: 200px;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    text-align: center;
+    padding: 100px 20px;
+    background: var(--card-bg);
+    border-radius: 16px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.content-card {
+    padding: 40px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Horizontal Scrollable Cards */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    justify-content: center;
+}
+
+.game-section {
+    flex: 0 0 80%;
+    max-width: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: scale(0.9);
+}
+
+.game-section.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.game-section video, .game-section img {
+    width: 100%;
+    max-width: 300px;
+    height: 540px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.game-description {
+    width: 40%;
+    text-align: left;
+    font-size: 18px;
+    position: relative;
+    top: 10px;
+    right: 10px;
+}
+
+/* Carousel Buttons */
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.carousel-buttons button {
+    background: var(--accent-color);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    pointer-events: all;
+}
+
+.carousel-buttons .prev {
+    left: -160px; /* Moves the left button further out */
+}
+
+.carousel-buttons .next {
+    right: -60px; /* Moves the right button further out */
+}
+
+.carousel-buttons button.active {
+    visibility: visible;
+}
+
+.carousel-buttons button:hover {
+    opacity: 1;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
