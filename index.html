@@ -1,22 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Developer Portfolio</title>
+    <title>Yehor Krasochenko CV</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-    <header>
-        <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
-        <h1>Funcy Coder</h1>
-        <p>Game Developer | Unity Expert | Mobile Games</p>
-    </header>
+<header>
+    <img src="assets/profile.png" alt="Profile Photo" class="profile-photo">
+    <h1>Yehor Krasochenko</h1>
+    <p>Game Developer</p>
+</header>
 
+<main>
     <section class="content-card">
-        <h2>Experience</h2>
-        <p>7 years of programming experience, 3 years with Unity...</p>
+        <h2>Experience & Projects</h2>
+        <ul>
+            <li>
+                <strong>Self Unity Projects / Prototypes</strong>
+                <ul>
+                    <li>
+                        3d Idle Tycoon game – (3mos) in progress
+                        <ul>
+                            <li>Team lead – 7 members team – 3 progs</li>
+                        </ul>
+                    </li>
+                    <li>
+                        2d Platformer Metroidvania – not finished (1-2 mos)
+                        <ul>
+                            <li>Main dev</li>
+                        </ul>
+                    </li>
+                    <li>
+                        2d Puzzle game – not finished (1-2 mos)
+                        <ul>
+                            <li>Main dev</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Card game prototype – 1.5 yrs
+                        <ul>
+                            <li>Main dev</li>
+                        </ul>
+                    </li>
+                    <li>Work on network using Netcode</li>
+                    <li>Work on UI, progression system, deck building. Al</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Ubisoft Kyiv – 5 yrs 2 mos</strong>
+                <ul>
+                    <li>
+                        <strong>Beyond Good And Evil 2:</strong>
+                        <ul>
+                            <li>Prototyping games on Unity (using netcode, Zenjoot)</li>
+                            <li>Worked on small mini games and touched several aspects of the game (UI, network, core gameplay)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>FarCry 6:</strong>
+                        <ul>
+                            <li>Working on UI code</li>
+                            <li>Working on mini games such as cook fighting</li>
+                            <li>Additionally worked on Photomod, Accessibility and custom Corsair keyboard support</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>Pingle Studio – 2 mos</strong>
+                <ul>
+                    <li>RTS prototype game</li>
+                    <li>Building system</li>
+                    <li>Spawning and controlling mobs</li>
+                    <li>Battle</li>
+                    <li>Network</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Apriorit – 1 yr 1 mos</strong>
+                <ul>
+                    <li>Cyber security stuff :)</li>
+                </ul>
+            </li>
+        </ul>
     </section>
 
     <section class="content-card">
@@ -24,84 +92,46 @@
         <p>Computer Science Degree from XYZ University...</p>
     </section>
 
-    <!-- Game Showcase Carousel -->
-    <div class="carousel-container">
-        <button class="carousel-button prev">&lt;</button>
-        <div class="carousel-track-wrapper">
-            <div class="carousel-track">
-                <div class="game-section">
-                    <video src="game1.mp4" controls></video>
-                    <div class="game-description">
-                        <h3>Game Title 1</h3>
-                        <p>Description of the first game...</p>
-                    </div>
+    <!-- Carousel -->
+    <section class="carousel">
+        <div class="carousel-track">
+            <article class="game">
+                <video src="game1.mp4" controls></video>
+                <div class="game-description">
+                    <h3>Game Title 1</h3>
+                    <p>Description of the first game...</p>
                 </div>
+            </article>
 
-                <div class="game-section active">
-                    <video src="game2.mp4" controls></video>
-                    <div class="game-description">
-                        <h3>Game Title 2</h3>
-                        <p>Description of the second game...</p>
-                    </div>
+            <article class="game">
+                <video src="game2.mp4" controls></video>
+                <div class="game-description">
+                    <h3>Game Title 2</h3>
+                    <p>Description of the second game...</p>
                 </div>
+            </article>
 
-                <div class="game-section">
-                    <img src="game3.jpg" alt="Game Image">
-                    <div class="game-description">
-                        <h3>Game Title 3</h3>
-                        <p>Description of the third game...</p>
-                    </div>
+            <article class="game">
+                <img src="game3.jpg" alt="Game Image">
+                <div class="game-description">
+                    <h3>Game Title 3</h3>
+                    <p>Description of the third game...</p>
                 </div>
-            </div>
+            </article>
         </div>
-        <button class="carousel-button next">&gt;</button>
-    </div>
 
-    <footer>
-        <p>© 2025 Funcy Coder | <a href="#">GitHub</a> | <a href="#">LinkedIn</a></p>
-    </footer>
-</div>
+        <div class="carousel-controls">
+            <button id="prevBtn" class="carousel-button">&larr;</button>
+            <div id="carouselDots" class="carousel-dots"></div>
+            <button id="nextBtn" class="carousel-button">&rarr;</button>
+        </div>
+    </section>
+</main>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const track = document.querySelector(".carousel-track");
-        const wrapper = document.querySelector(".carousel-track-wrapper");
-        const prevButton = document.querySelector(".prev");
-        const nextButton = document.querySelector(".next");
+<footer>
+    <p>© 2025 Funcy Coder | <a href="#">GitHub</a> | <a href="#">LinkedIn</a></p>
+</footer>
 
-        let index = 1;
-
-        function updateCarousel() {
-            const items = document.querySelectorAll(".game-section");
-            const width = items[0].offsetWidth + 20;
-            const centerOffset = (wrapper.offsetWidth / 2) - (items[0].offsetWidth / 2);
-            track.style.transform = `translateX(${centerOffset - index * width}px)`;
-
-            items.forEach((item, i) => {
-                item.classList.toggle("active", i === index);
-            });
-
-            prevButton.style.display = index > 0 ? "block" : "none";
-            nextButton.style.display = index < items.length - 1 ? "block" : "none";
-        }
-
-        nextButton.addEventListener("click", function() {
-            const items = document.querySelectorAll(".game-section");
-            if (index < items.length - 1) {
-                index++;
-                updateCarousel();
-            }
-        });
-
-        prevButton.addEventListener("click", function() {
-            if (index > 0) {
-                index--;
-                updateCarousel();
-            }
-        });
-
-        updateCarousel();
-    });
-</script>
+<script src="script.js"></script>
 </body>
 </html>
