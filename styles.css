@@ -32,7 +32,7 @@ body::before {
     height: 100%;
     background-image: var(--grain-overlay);
     background-repeat: repeat;
-    background-size: 500px;
+    background-size: 400px;
     opacity: 0.5;
     mix-blend-mode: overlay;
     pointer-events: none;
@@ -79,7 +79,7 @@ h1 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease;
     /* Мінімальна ширина контент-карти */
-    min-width: 800px;
+    min-width: 760px;
 }
 
 h2 {
