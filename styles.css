@@ -18,8 +18,9 @@ body {
     background: var(--background-color);
     color: var(--text-color);
     position: relative;
+    
     /* Мінімальна ширина сторінки */
-    min-width: 820px;
+    min-width: 900px;
 }
 
 /* Ефект зернистості */
@@ -47,8 +48,6 @@ header {
     margin-bottom: 40px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease;
-    /* Мінімальна ширина header */
-    min-width: 800px;
 }
 
 .profile-photo {
@@ -78,8 +77,6 @@ h1 {
     margin-bottom: 20px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease;
-    /* Мінімальна ширина контент-карти */
-    min-width: 760px;
 }
 
 h2 {
@@ -99,8 +96,6 @@ p {
     max-width: 1200px;
     overflow: hidden;
     margin: 40px auto;
-    /* Мінімальна ширина каруселі */
-    min-width: 800px;
 }
 
 .carousel::before,
@@ -142,8 +137,6 @@ p {
     opacity: 0.5;
     transform: scale(0.95);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    /* Мінімальна ширина елемента каруселі */
-    min-width: 600px;
 }
 
 .game.active {
@@ -226,8 +219,6 @@ footer {
     background: var(--card-bg);
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Мінімальна ширина футера */
-    min-width: 800px;
 }
 
 /* Анімації */
