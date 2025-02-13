@@ -91,6 +91,25 @@ p {
 }
 
 /* Carousel */
+.carousel-title {
+    text-align: center;
+    margin-bottom: -20px;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.8rem;
+    letter-spacing: 0.05rem;
+}
+
+.carousel-title::after {
+    content: "";
+    display: block;
+    width: 300px;
+    height: 1px;
+    background-color: var(--text-color);
+    margin: 2px auto 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .carousel {
     position: relative;
     max-width: 1200px;
