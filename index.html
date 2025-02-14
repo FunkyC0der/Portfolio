@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <!-- Фіксована ширина макета: браузер на мобільних пристроях зумить сторінку -->
+    <!-- Фіксована ширина макета: мобільні пристрої зумують сторінку, щоб показати весь контент -->
     <meta name="viewport" content="width=900, user-scalable=yes">
     <title>Yehor Krasochenko CV</title>
     <link rel="stylesheet" href="styles.css">
@@ -15,28 +15,49 @@
 </header>
 
 <main>
-    <!-- Carousel -->
+    <!-- Carousel Section -->
     <h2 class="carousel-title">Unity Projects</h2>
     <section class="carousel">
         <div class="carousel-track">
-            <article class="game">
-                <video src="assets/atomic_tycoon.mp4" controls></video>
+            <!-- Variant 1: Portrait (Video on the left, description on the right) -->
+            <article class="game portrait">
+                <div class="game-media">
+                    <video src="assets/atomic_tycoon.mp4" controls></video>
+                </div>
                 <div class="game-description">
-                    <h3>Idle Tycoon</h3>
+                    <h2 class="game-title">Idle Tycoon</h2>
                     <p>Description of the first game...</p>
                 </div>
             </article>
 
-            <article class="game">
-                <video src="game2.mp4" controls></video>
+            <!-- Variant 2: Horizontal (Video on top, description below) -->
+            <article class="game horizontal">
+                <h2 class="game-title">Card Match</h2>
+                <div class="game-media">
+                    <video src="assets/card_match.mp4" controls></video>
+                </div>
                 <div class="game-description">
-                    <h3>Game Title 2</h3>
-                    <p>Description of the second game...</p>
+                    <p class="small-text"><em>Example of one of the test assignments completed:</em></p>
+                    <p>
+                        The <strong>CardMatchGame</strong> project uses <strong>dependency injection</strong> and a <strong>service-oriented architecture</strong> to ensure modularity and maintainability.
+                    </p>
+                    <p>
+                        It follows the <strong>Single Responsibility Principle</strong> and implements a <strong>state machine</strong> for managing game flow.
+                    </p>
+                    <p>
+                        Additionally, the <strong>PrimeTween</strong> library is used for smooth animations, and an <strong>editor utility</strong> is included to streamline development.
+                    </p>
+                    <p class="small-text">
+                        For full details, see the <a href="https://github.com/FunkyC0der/CardMatchGame?tab=readme-ov-file#card-match-game">README</a>.
+                    </p>
                 </div>
             </article>
 
-            <article class="game">
-                <img src="game3.jpg" alt="Game Image">
+            <!-- Optional: Horizontal variant with image -->
+            <article class="game horizontal">
+                <div class="game-media">
+                    <img src="game3.jpg" alt="Game Image">
+                </div>
                 <div class="game-description">
                     <h3>Game Title 3</h3>
                     <p>Description of the third game...</p>
@@ -50,20 +71,17 @@
             <button id="nextBtn" class="carousel-button">&rarr;</button>
         </div>
     </section>
-    
+
+    <!-- Content Cards -->
     <section class="content-card">
         <h2>Ubisoft – C++ Game Developer | Unity Developer - 5 years 8 months</h2>
-
         <h3>Beyond Good &amp; Evil 2</h3>
         <ul>
-            <li>Developed prototypes for both multiplayer and single-player mini-games in Unity, utilizing Netcode,
-                UGUI, and a custom-built prediction AI specifically designed for board games.
-            </li>
+            <li>Developed prototypes for both multiplayer and single-player mini-games in Unity, utilizing Netcode, UGUI, and a custom-built prediction AI for board games.</li>
             <li>Worked on mini games using an internal C++ game engine.</li>
-            <li>Utilizing network concepts as RPCs, authority and replication.</li>
+            <li>Utilized network concepts such as RPCs, authority, and replication.</li>
             <li>Applied data-oriented design principles to implement gameplay mechanics.</li>
         </ul>
-
         <h3>FarCry 6 Project</h3>
         <ul>
             <li>Mainly responsible for maintaining UI code.</li>
@@ -76,9 +94,7 @@
         <h3>PC RTS Game Prototype</h3>
         <ul>
             <li>Developed a fully functional 3D RTS game as the main developer.</li>
-            <li>Led the design and implementation of building and unit systems, battle mechanics, unit control, and
-                networking.
-            </li>
+            <li>Led the design and implementation of building and unit systems, battle mechanics, unit control, and networking.</li>
         </ul>
     </section>
 
@@ -105,7 +121,6 @@
             <li>Master's Degree in Computer Science, Dnipro University of Technology</li>
             <li>K Syndicate "Architecture Unity Games" course – <a href="https://lms.k-syndicate.school/architecture-unity-games/">Link</a></li>
         </ul>
-
         <h3>Books</h3>
         <ul>
             <li>Game Programming Patterns</li>
@@ -119,8 +134,7 @@
 </main>
 
 <footer>
-    <p>© 2025 Yehor Krasochenko | <a href="https://github.com/FunkyC0der">GitHub</a> | <a
-            href="https://www.linkedin.com/in/krasochenkodev/">LinkedIn</a></p>
+    <p>© 2025 Yehor Krasochenko | <a href="https://github.com/FunkyC0der">GitHub</a> | <a href="https://www.linkedin.com/in/krasochenkodev/">LinkedIn</a></p>
 </footer>
 
 <script src="script.js"></script>

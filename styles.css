@@ -18,8 +18,6 @@ body {
     background: var(--background-color);
     color: var(--text-color);
     position: relative;
-    
-    /* Мінімальна ширина сторінки */
     min-width: 900px;
 }
 
@@ -57,16 +55,16 @@ header {
     margin-bottom: 15px;
     object-fit: cover;
     position: relative;
-    z-index: 2;               /* Забезпечує, що фото буде над зернистим ефектом */
-    mix-blend-mode: normal;   /* Відключає вплив grain effect */
-    border: 1px solid var(--accent-color); /* Тонка рамочка */
+    z-index: 2;
+    mix-blend-mode: normal;
+    border: 1px solid var(--accent-color);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    font-size: 2rem; /* 32px (можна адаптувати, якщо потрібно) */
+    font-size: 2rem;
     font-weight: 600;
-    margin: 0.625rem 0; /* 10px */
+    margin: 0.625rem 0;
 }
 
 /* Content Cards */
@@ -80,9 +78,9 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 1rem; /* 20px */
+    margin-bottom: 1rem;
 }
 
 p {
@@ -90,7 +88,7 @@ p {
     font-weight: 300;
 }
 
-/* Carousel */
+/* Carousel Title */
 .carousel-title {
     text-align: center;
     margin-bottom: -20px;
@@ -110,6 +108,7 @@ p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Carousel */
 .carousel {
     position: relative;
     max-width: 1200px;
@@ -147,8 +146,6 @@ p {
 .game {
     flex: 0 0 65%;
     margin: 0 2%;
-    display: flex;
-    align-items: flex-start;
     background: var(--card-bg);
     padding: 20px;
     border-radius: 12px;
@@ -156,6 +153,13 @@ p {
     opacity: 0.5;
     transform: scale(0.95);
     transition: opacity 0.3s ease, transform 0.3s ease;
+    height: 600px;
+}
+
+.game-title {
+    text-align: center;
+    width: 100%;
+    margin-top: 0;
 }
 
 .game.active {
@@ -166,21 +170,67 @@ p {
 .game video,
 .game img {
     width: 100%;
-    max-width: 300px;
-    height: 540px;
+    height: auto;
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-.game-description {
-    width: 50%;
-    text-align: left;
-    font-size: 18px;
-    margin-left: 20px;
+/* Portrait Variant: Video on the left, description on the right */
+.game.portrait {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 }
 
-/* Кнопки та точки каруселі */
+.game.portrait .game-media {
+    flex: 1;
+    max-width: 300px;
+    margin-right: 20px;
+}
+
+.game.portrait .game-description {
+    flex: 1;
+}
+
+/* Horizontal Variant: Video on top, description below */
+.game.horizontal {
+    display: block;
+}
+
+.game.horizontal .game-media {
+    width: 540px;
+    margin: 0 auto 20px;
+}
+
+.game.horizontal .game-description {
+    width: 100%;
+    margin-left: 0;
+}
+
+/* Game Description */
+.game-description {
+    width: 60%;
+    text-align: left;
+    margin-left: 20px;
+    padding-right: 5px;
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+/* Зменшення розміру шрифту в описі гри */
+.game-description p,
+.game-description h3,
+.game-description ul,
+.game-description li {
+    font-size: 0.8rem;
+}
+
+.game-description .small-text {
+    font-size: 0.7rem;
+}
+
+/* Carousel Controls */
 .carousel-controls {
     margin-top: 20px;
     text-align: center;
@@ -194,8 +244,8 @@ p {
     margin: 0 10px;
     cursor: pointer;
     border-radius: 4px;
-    font-size: 24px;        /* Збільшено розмір стрілок */
-    font-weight: 700;       /* Товстіше */
+    font-size: 24px;
+    font-weight: 700;
     transition: background-color 0.3s ease;
 }
 
@@ -251,3 +301,4 @@ footer {
         transform: translateY(0);
     }
 }
+
