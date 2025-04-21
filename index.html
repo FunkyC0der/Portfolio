@@ -19,18 +19,42 @@
     <h2 class="carousel-title">Unity Projects</h2>
     <section class="carousel">
         <div class="carousel-track">
-            <!-- Variant 1: Portrait (Video on the left, description on the right) -->
+            
+            <article class="game portrait">
+                <div class="game-media">
+                    <video src="assets/fishhunt.mp4" controls></video>
+                </div>
+                
+                <div class="game-description">
+                    <h2 class="game-title">Fish Hunt</h2>
+                    <ul>
+                        <li>Worked as the main developer in a team with one game designer/artist.</li>
+                        <li>Used the <strong>Spine</strong> editor and it's plugin to implement character animations.</li>
+                        <li>Used <strong>VContainer</strong> for dependency injection and a service‑oriented architecture.</li>
+                        <li>
+                            Developed a custom solution to import data from <strong>Google Sheets</strong> and convert it into
+                            <strong>ScriptableObjects</strong>. Configs are imported on mobile devices in production, allowing the
+                            designer to tweak game parameters without rebuilding the project.
+                        </li>
+                        <li>Integrated <strong>Firebase Analytics</strong> and the <strong>Facebook SDK</strong> into the project.</li>
+                    </ul>
+                </div>
+            </article>
+            
             <article class="game portrait">
                 <div class="game-media">
                     <video src="assets/atomic_tycoon.mp4" controls></video>
                 </div>
                 <div class="game-description">
                     <h2 class="game-title">Idle Tycoon</h2>
-                    <p>Description of the first game...</p>
+                    <ul>
+                        <li>Worked as the main developer in a team with one game designer, one 3d artist and freelance UI/UX.</li>
+                        <li>Used <strong>VContainer</strong> for dependency injection and a service‑oriented architecture.</li>
+                        <li>Used <strong>DoTween</strong> to create UI and some 3D animations.</li>
+                    </ul>
                 </div>
             </article>
 
-            <!-- Variant 2: Horizontal (Video on top, description below) -->
             <article class="game horizontal">
                 <h2 class="game-title">Card Match</h2>
                 <div class="game-media">
@@ -50,17 +74,6 @@
                     <p class="small-text">
                         For full details, see the <a href="https://github.com/FunkyC0der/CardMatchGame?tab=readme-ov-file#card-match-game">README</a>.
                     </p>
-                </div>
-            </article>
-
-            <!-- Optional: Horizontal variant with image -->
-            <article class="game horizontal">
-                <div class="game-media">
-                    <img src="game3.jpg" alt="Game Image">
-                </div>
-                <div class="game-description">
-                    <h3>Game Title 3</h3>
-                    <p>Description of the third game...</p>
                 </div>
             </article>
         </div>
