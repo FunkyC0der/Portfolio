@@ -11,7 +11,7 @@
 <header>
     <img src="assets/profile.jpg" alt="Profile Photo" class="profile-photo">
     <h1>Yehor Krasochenko</h1>
-    <p>Game Developer | +8 years experience</p>
+    <p>Game Developer | 8+ years experience</p>
 </header>
 
 <main>
@@ -21,47 +21,134 @@
         <div class="carousel-track">
 
             <article class="game horizontal">
+                <h2 class="game-title">Chomp Hero</h2>
+                <div class="game-media">
+                    <video src="assets/chomp_hero.mov" controls></video>
+                </div>
+                <div class="game-description">
+                    <p class="small-text"><em>Steam | 2D puzzle game</em></p>
+                    <p>
+                        Worked as the sole Unity engineer in a small cross-functional team
+                        (Game Designer and Artist/UI/UX), taking full ownership of the technical
+                        implementation of the project.
+                    </p>
+
+                    <ul>
+                        <li>
+                            Designed and implemented a scalable and extensible game architecture
+                            supporting multiple unit behaviors, custom tile types (traps, teleports),
+                            and advanced gameplay mechanics such as turn-based undo.
+                        </li>
+                        <li>
+                            Developed an internal level assistance and validation tool based on the
+                            A* pathfinding algorithm to support level design workflows; additionally
+                            experimented with Monte Carlo approaches for alternative solution generation.
+                        </li>
+                        <li>
+                            Integrated Unity Analytics to collect gameplay metrics and support
+                            data-driven iteration during multiple web-based playtests.
+                        </li>
+                        <li>
+                            Implemented UI, VFX, and shader-driven animations using PrimeTween to ensure
+                            smooth, responsive, and polished player feedback.
+                        </li>
+                        <li>
+                            Applied a service-based architecture with dependency injection using
+                            Init(args), improving modularity, testability, and long-term maintainability
+                            of the codebase.
+                        </li>
+                        <li><a href="https://store.steampowered.com/app/1839010/Chomp_Hero/">Steam page link</a></li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="game horizontal">
                 <h2 class="game-title">Farm Game</h2>
                 <div class="game-media">
                     <img src="assets/farm_game.jpg">
                 </div>
                 <div class="game-description">
-                    <p class="small-text"><em>The template was reworked according to the client’s requirements.</em></p>
-                    <p>The following additional features were implemented in the game:</p>
+                    <p class="small-text">
+                        <em>The original template was significantly reworked and extended to meet
+                            the client’s specific gameplay and technical requirements.</em>
+                    </p>
+
+                    <p>Key features and systems implemented:</p>
+
                     <ul>
-                        <li>Various gameplay mechanics: Planting with growth stages, game offline calculations, etc.</li>
-                        <li>A shop with in-game purchases using Unity In-App Purchases</li>
-                        <li>A referral system with data storage in Unity Cloud Save and data processing via Unity Cloud Code</li>
-                        <li>Ads integration using Unity Ads Monetization and IronSource</li>
-                        <li>A loot box system with a roulette, similar to CS:GO :)</li>
-                        <li><a href="https://apps.apple.com/ua/app/goldenwood/id6747716127?l=uk</li"> App Store Link</a></li>
+                        <li>
+                            Implemented multiple gameplay systems, including planting mechanics
+                            with growth stages and offline progression calculations to ensure
+                            consistent game state updates.
+                        </li>
+                        <li>
+                            Developed an in-game shop with purchases powered by Unity In-App
+                            Purchasing, supporting monetization on mobile platforms.
+                        </li>
+                        <li>
+                            Designed and integrated a referral system using Unity Cloud Save for
+                            persistent data storage and Unity Cloud Code for server-side data
+                            processing and validation.
+                        </li>
+                        <li>
+                            Integrated advertising solutions using Unity Ads Monetization and
+                            ironSource, ensuring stable ad delivery and optimized monetization flow.
+                        </li>
+                        <li>
+                            Implemented a loot box system with a roulette-style opening experience,
+                            inspired by CS:GO, focusing on clear visual feedback and user engagement.
+                        </li>
+                        <li><a href="https://apps.apple.com/ua/app/goldenwood/id6747716127?l=uk</li"> App Store Link</a>
+                        </li>
                     </ul>
                 </div>
             </article>
-            
+
             <article class="game portrait">
                 <div class="game-media">
                     <video src="assets/fish_hunt.mp4" controls></video>
                 </div>
-                
+
                 <div class="game-description">
                     <h2 class="game-title">Fish Hunt</h2>
                     <ul>
-                        <li>Worked as the main developer in a team with one game designer/artist.</li>
-                        <li>Used the <strong>Spine</strong> editor and it's plugin to implement character animations.</li>
-                        <li>Used <strong>VContainer</strong> for dependency injection and a service‑oriented architecture.</li>
                         <li>
-                            Developed a custom solution to import data from <strong>Google Sheets</strong> and convert it into
-                            <strong>ScriptableObjects</strong>. Configs are imported on mobile devices in production, allowing the
-                            designer to tweak game parameters without rebuilding the project.
+                            Served as the primary Unity developer in a small team with a
+                            game designer/artist, taking ownership of core technical decisions
+                            and implementation.
                         </li>
-                        <li>Integrated <strong>Firebase Analytics</strong> and the <strong>Facebook SDK</strong> into the project.</li>
-                        <li>Used Shader Graphs to create diffraction and caustic water effects.</li>
-                        <li><a href="https://play.google.com/store/apps/details?id=com.usod.fishhunt&pcampaignid=web_share">Google Play Store link</a></li>
+                        <li>
+                            Implemented character animation pipelines using the Spine editor
+                            and its Unity integration, ensuring smooth runtime performance
+                            and maintainable animation setups.
+                        </li>
+                        <li>
+                            Built a service-oriented architecture with dependency injection
+                            using VContainer, improving modularity and long-term scalability.
+                        </li>
+                        <li>
+                            Designed and implemented a custom data pipeline to import balancing
+                            and configuration data from Google Sheets into ScriptableObjects.
+                            The system supports live config updates on production mobile builds,
+                            enabling designers to iterate on gameplay parameters without
+                            requiring project rebuilds.
+                        </li>
+                        <li>
+                            Integrated Firebase Analytics and the Facebook SDK to support
+                            user behavior tracking and data-driven decision making.
+                        </li>
+                        <li>
+                            Created custom visual effects using Shader Graph, including
+                            diffraction and caustic water effects, with attention to performance
+                            on mobile devices.
+                        </li>
+                        <li>
+                            <a href="https://play.google.com/store/apps/details?id=com.usod.fishhunt&pcampaignid=web_share">Google
+                                Play Store link</a></li>
                     </ul>
                 </div>
             </article>
-            
+
             <article class="game portrait">
                 <div class="game-media">
                     <video src="assets/atomic_tycoon.mp4" controls></video>
@@ -69,8 +156,12 @@
                 <div class="game-description">
                     <h2 class="game-title">Idle Tycoon</h2>
                     <ul>
-                        <li>Worked as the main developer in a team with one game designer, one 3d artist and freelance UI/UX.</li>
-                        <li>Used <strong>VContainer</strong> for dependency injection and a service‑oriented architecture.</li>
+                        <li>Worked as the main developer in a team with one game designer, one 3d artist and freelance
+                            UI/UX.
+                        </li>
+                        <li>Used <strong>VContainer</strong> for dependency injection and a service‑oriented
+                            architecture.
+                        </li>
                         <li>Used <strong>DoTween</strong> to create UI and some 3D animations.</li>
                     </ul>
                 </div>
@@ -84,16 +175,20 @@
                 <div class="game-description">
                     <p class="small-text"><em>Example of one of the test assignments completed:</em></p>
                     <p>
-                        The <strong>CardMatchGame</strong> project uses <strong>dependency injection</strong> and a <strong>service-oriented architecture</strong> to ensure modularity and maintainability.
+                        The <strong>CardMatchGame</strong> project uses <strong>dependency injection</strong> and a
+                        <strong>service-oriented architecture</strong> to ensure modularity and maintainability.
                     </p>
                     <p>
-                        It follows the <strong>Single Responsibility Principle</strong> and implements a <strong>state machine</strong> for managing game flow.
+                        It follows the <strong>Single Responsibility Principle</strong> and implements a <strong>state
+                        machine</strong> for managing game flow.
                     </p>
                     <p>
-                        Additionally, the <strong>PrimeTween</strong> library is used for smooth animations, and an <strong>editor utility</strong> is included to streamline development.
+                        Additionally, the <strong>PrimeTween</strong> library is used for smooth animations, and an
+                        <strong>editor utility</strong> is included to streamline development.
                     </p>
                     <p class="small-text">
-                        For full details, see the <a href="https://github.com/FunkyC0der/CardMatchGame?tab=readme-ov-file#card-match-game">README</a>.
+                        For full details, see the <a
+                            href="https://github.com/FunkyC0der/CardMatchGame?tab=readme-ov-file#card-match-game">README</a>.
                     </p>
                 </div>
             </article>
@@ -101,7 +196,8 @@
             <article class="game horizontal">
                 <h2 class="game-title">Card Game Prototype</h2>
                 <div class="game-description">
-                    <p class="small-text"><em>Card Game prototype made for one of Ubisoft big games. Can't show any screenshots.</em></p>
+                    <p class="small-text"><em>Card Game prototype made for one of Ubisoft big games. Can't show any
+                        screenshots.</em></p>
                     <p>
                         There were implemented next features:
                     </p>
@@ -125,10 +221,12 @@
 
     <!-- Content Cards -->
     <section class="content-card">
-        <h2>Ubisoft – Senior C++ Game Developer | Unity Developer - 5 years 8 months</h2>
+        <h2>Ubisoft – Senior C++ Game Developer | Unity Developer - 6+ years</h2>
         <h3>Beyond Good &amp; Evil 2</h3>
         <ul>
-            <li>Developed prototypes for both multiplayer and single-player mini-games in Unity, utilizing Netcode, UGUI, and a custom-built prediction AI for board games.</li>
+            <li>Developed prototypes for both multiplayer and single-player mini-games in Unity, utilizing Netcode,
+                UGUI, and a custom-built prediction AI for board games.
+            </li>
             <li>Worked on mini games using an internal C++ game engine.</li>
             <li>Utilized network concepts such as RPCs, authority, and replication.</li>
             <li>Applied data-oriented design principles to implement gameplay mechanics.</li>
@@ -145,7 +243,9 @@
         <h3>PC RTS Game Prototype</h3>
         <ul>
             <li>Developed a fully functional 3D RTS game as the main developer.</li>
-            <li>Led the design and implementation of building and unit systems, battle mechanics, unit control, and networking.</li>
+            <li>Led the design and implementation of building and unit systems, battle mechanics, unit control, and
+                networking.
+            </li>
         </ul>
     </section>
 
@@ -154,14 +254,17 @@
         <h3>Cyber security stuff ;)</h3>
         <ul>
             <li>
-                Worked in the Windows kernel, maintaining projects for user-kernel communication. Tasks included data serialization, system monitoring via kernel callbacks, and using kernel APIs for process/thread and registry management.
+                Worked in the Windows kernel, maintaining projects for user-kernel communication. Tasks included data
+                serialization, system monitoring via kernel callbacks, and using kernel APIs for process/thread and
+                registry management.
             </li>
             <li>Parsed Portable Executable (PE) files.</li>
             <li>Developed a project for hooking Windows user APIs.</li>
             <li>Created a C++ DLL for a C# project using marshaling.</li>
             <li>Enabled communication between a Windows service (REST SDK in C++) and a Node.js web service.</li>
             <li>
-                Developed a secure, cross-platform messenger (Linux/Windows) using the Qt framework, network sockets, SQLite, and TLS.
+                Developed a secure, cross-platform messenger (Linux/Windows) using the Qt framework, network sockets,
+                SQLite, and TLS.
             </li>
         </ul>
     </section>
@@ -170,14 +273,17 @@
         <h2>Education</h2>
         <ul>
             <li>Master's Degree in Computer Science, Dnipro University of Technology</li>
-            <li>K Syndicate "Architecture Unity Games" course – <a href="https://lms.k-syndicate.school/architecture-unity-games/">Link</a></li>
+            <li>K Syndicate "Architecture Unity Games" course – <a
+                    href="https://lms.k-syndicate.school/architecture-unity-games/">Link</a></li>
         </ul>
         <h3>Books</h3>
         <ul>
             <li>Game Programming Patterns</li>
             <li>Design Patterns: Elements of Reusable Object-Oriented Software</li>
             <li>Effective Modern C++: 42 Specific Ways to Improve Your Use of C++11 and C++14 – Scott Meyers</li>
-            <li>C++ Coding Standards: 101 Rules, Guidelines, and Best Practices – Herb Sutter &amp; Andrei Alexandrescu</li>
+            <li>C++ Coding Standards: 101 Rules, Guidelines, and Best Practices – Herb Sutter &amp; Andrei
+                Alexandrescu
+            </li>
             <li>Effective STL: 50 Specific Ways to Improve Your Use of the Standard Template Library – Scott Meyers</li>
             <li>C++ Concurrency in Action: Practical Multithreading – Anthony Williams</li>
         </ul>
@@ -185,7 +291,8 @@
 </main>
 
 <footer>
-    <p>© 2025 Yehor Krasochenko | <a href="https://github.com/FunkyC0der">GitHub</a> | <a href="https://www.linkedin.com/in/krasochenkodev/">LinkedIn</a></p>
+    <p>© 2025 Yehor Krasochenko | <a href="https://github.com/FunkyC0der">GitHub</a> | <a
+            href="https://www.linkedin.com/in/krasochenkodev/">LinkedIn</a></p>
 </footer>
 
 <script src="script.js"></script>

@@ -187,8 +187,9 @@ p {
 }
 
 .game.horizontal .game-description {
-    width: 100%;
-    margin-left: 0;
+    overflow-y: auto;
+    width: 700px;
+    max-height: 220px;
 }
 
 /* Game Description */
@@ -199,6 +200,19 @@ p {
     padding-right: 5px;
     overflow-y: auto;
     max-height: 100%;
+}
+
+.game-description::-webkit-scrollbar {
+    width: 6px;
+}
+
+.game-description::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+.game-description::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 /* Зменшення розміру шрифту в описі гри */
