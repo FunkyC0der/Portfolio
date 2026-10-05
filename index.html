@@ -1,299 +1,567 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Фіксована ширина макета: мобільні пристрої зумують сторінку, щоб показати весь контент -->
-    <meta name="viewport" content="width=900, user-scalable=yes">
-    <title>Yehor Krasochenko CV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yehor Krasochenko — Game Developer</title>
+    <meta name="description" content="Yehor Krasochenko — Game Developer (Unity & C++), 8+ years of experience. Projects, experience and education.">
+    <meta name="color-scheme" content="light dark">
+    <!-- Застосовуємо збережену тему до першого рендеру, щоб не було спалаху -->
+    <script>
+        (function () {
+            var root = document.documentElement;
+            root.classList.add('js');
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light' || t === 'dark') root.dataset.theme = t;
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/profile.jpg">
 </head>
 <body>
-<header>
-    <img src="assets/profile.jpg" alt="Profile Photo" class="profile-photo">
-    <h1>Yehor Krasochenko</h1>
-    <p>Game Developer | 8+ years experience</p>
+
+<!-- SVG-іконки -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></symbol>
+    <symbol id="i-system" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></g></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12l7 7 7-7"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5M5 12l7-7 7 7"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></g></symbol>
+</svg>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+
+<header class="nav" id="top">
+    <div class="nav__inner">
+        <a class="nav__brand" href="#top" aria-label="Yehor Krasochenko — back to top">
+            <span class="nav__logo">YK</span>
+            <span class="nav__name">Yehor Krasochenko</span>
+        </a>
+
+        <nav class="nav__menu" id="nav-menu" aria-label="Sections">
+            <a class="nav__link" href="#projects" data-section="projects">Projects</a>
+            <a class="nav__link" href="#experience" data-section="experience">Experience</a>
+            <a class="nav__link" href="#education" data-section="education">Education</a>
+            <span class="nav__indicator" aria-hidden="true"></span>
+        </nav>
+
+        <div class="nav__actions">
+            <button class="icon-btn theme-toggle" type="button" aria-label="Theme: system">
+                <svg class="theme-toggle__icon" data-mode="light"><use href="#i-sun"/></svg>
+                <svg class="theme-toggle__icon" data-mode="dark"><use href="#i-moon"/></svg>
+                <svg class="theme-toggle__icon" data-mode="system"><use href="#i-system"/></svg>
+            </button>
+            <a class="icon-btn nav__social" href="https://github.com/FunkyC0der" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg><use href="#i-github"/></svg>
+            </a>
+            <a class="icon-btn nav__social" href="https://www.linkedin.com/in/krasochenkodev/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg><use href="#i-linkedin"/></svg>
+            </a>
+            <button class="icon-btn burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
 </header>
 
 <main>
-    <!-- Carousel Section -->
-    <h2 class="carousel-title">Unity Projects</h2>
-    <section class="carousel">
-        <div class="carousel-track">
-
-            <article class="game horizontal">
-                <h2 class="game-title">Chomp Hero</h2>
-                <div class="game-media">
-                    <video src="assets/chomp_hero.mp4" controls></video>
-                </div>
-                <div class="game-description">
-                    <p class="small-text"><em>Steam | 2D puzzle game</em></p>
-                    <p>
-                        Worked as the sole Unity engineer in a small cross-functional team
-                        (Game Designer and Artist/UI/UX), taking full ownership of the technical
-                        implementation of the project.
-                    </p>
-
-                    <ul>
-                        <li>
-                            Designed and implemented a scalable and extensible game architecture
-                            supporting multiple unit behaviors, custom tile types (traps, teleports),
-                            and advanced gameplay mechanics such as turn-based undo.
-                        </li>
-                        <li>
-                            Developed an internal level assistance and validation tool based on the
-                            A* pathfinding algorithm to support level design workflows; additionally
-                            experimented with Monte Carlo approaches for alternative solution generation.
-                        </li>
-                        <li>
-                            Integrated Unity Analytics to collect gameplay metrics and support
-                            data-driven iteration during multiple web-based playtests.
-                        </li>
-                        <li>
-                            Implemented UI, VFX, and shader-driven animations using PrimeTween to ensure
-                            smooth, responsive, and polished player feedback.
-                        </li>
-                        <li>
-                            Applied a service-based architecture with dependency injection using
-                            Init(args), improving modularity, testability, and long-term maintainability
-                            of the codebase.
-                        </li>
-                        <li><a href="https://store.steampowered.com/app/1839010/Chomp_Hero/">Steam page link</a></li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="game horizontal">
-                <h2 class="game-title">Farm Game</h2>
-                <div class="game-media">
-                    <img src="assets/farm_game.jpg">
-                </div>
-                <div class="game-description">
-                    <p class="small-text">
-                        <em>The original template was significantly reworked and extended to meet
-                            the client’s specific gameplay and technical requirements.</em>
-                    </p>
-
-                    <p>Key features and systems implemented:</p>
-
-                    <ul>
-                        <li>
-                            Implemented multiple gameplay systems, including planting mechanics
-                            with growth stages and offline progression calculations to ensure
-                            consistent game state updates.
-                        </li>
-                        <li>
-                            Developed an in-game shop with purchases powered by Unity In-App
-                            Purchasing, supporting monetization on mobile platforms.
-                        </li>
-                        <li>
-                            Designed and integrated a referral system using Unity Cloud Save for
-                            persistent data storage and Unity Cloud Code for server-side data
-                            processing and validation.
-                        </li>
-                        <li>
-                            Integrated advertising solutions using Unity Ads Monetization and
-                            ironSource, ensuring stable ad delivery and optimized monetization flow.
-                        </li>
-                        <li>
-                            Implemented a loot box system with a roulette-style opening experience,
-                            inspired by CS:GO, focusing on clear visual feedback and user engagement.
-                        </li>
-                        <li><a href="https://apps.apple.com/ua/app/goldenwood/id6747716127?l=uk</li"> App Store Link</a>
-                        </li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="game portrait">
-                <div class="game-media">
-                    <video src="assets/fish_hunt.mp4" controls></video>
-                </div>
-
-                <div class="game-description">
-                    <h2 class="game-title">Fish Hunt</h2>
-                    <ul>
-                        <li>
-                            Served as the primary Unity developer in a small team with a
-                            game designer/artist, taking ownership of core technical decisions
-                            and implementation.
-                        </li>
-                        <li>
-                            Implemented character animation pipelines using the Spine editor
-                            and its Unity integration, ensuring smooth runtime performance
-                            and maintainable animation setups.
-                        </li>
-                        <li>
-                            Built a service-oriented architecture with dependency injection
-                            using VContainer, improving modularity and long-term scalability.
-                        </li>
-                        <li>
-                            Designed and implemented a custom data pipeline to import balancing
-                            and configuration data from Google Sheets into ScriptableObjects.
-                            The system supports live config updates on production mobile builds,
-                            enabling designers to iterate on gameplay parameters without
-                            requiring project rebuilds.
-                        </li>
-                        <li>
-                            Integrated Firebase Analytics and the Facebook SDK to support
-                            user behavior tracking and data-driven decision making.
-                        </li>
-                        <li>
-                            Created custom visual effects using Shader Graph, including
-                            diffraction and caustic water effects, with attention to performance
-                            on mobile devices.
-                        </li>
-                        <li>
-                            <a href="https://play.google.com/store/apps/details?id=com.usod.fishhunt&pcampaignid=web_share">Google
-                                Play Store link</a></li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="game portrait">
-                <div class="game-media">
-                    <video src="assets/atomic_tycoon.mp4" controls></video>
-                </div>
-                <div class="game-description">
-                    <h2 class="game-title">Idle Tycoon</h2>
-                    <ul>
-                        <li>Worked as the main developer in a team with one game designer, one 3d artist and freelance
-                            UI/UX.
-                        </li>
-                        <li>Used <strong>VContainer</strong> for dependency injection and a service‑oriented
-                            architecture.
-                        </li>
-                        <li>Used <strong>DoTween</strong> to create UI and some 3D animations.</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="game horizontal">
-                <h2 class="game-title">Card Match</h2>
-                <div class="game-media">
-                    <video src="assets/card_match.mp4" controls></video>
-                </div>
-                <div class="game-description">
-                    <p class="small-text"><em>Example of one of the test assignments completed:</em></p>
-                    <p>
-                        The <strong>CardMatchGame</strong> project uses <strong>dependency injection</strong> and a
-                        <strong>service-oriented architecture</strong> to ensure modularity and maintainability.
-                    </p>
-                    <p>
-                        It follows the <strong>Single Responsibility Principle</strong> and implements a <strong>state
-                        machine</strong> for managing game flow.
-                    </p>
-                    <p>
-                        Additionally, the <strong>PrimeTween</strong> library is used for smooth animations, and an
-                        <strong>editor utility</strong> is included to streamline development.
-                    </p>
-                    <p class="small-text">
-                        For full details, see the <a
-                            href="https://github.com/FunkyC0der/CardMatchGame?tab=readme-ov-file#card-match-game">README</a>.
-                    </p>
-                </div>
-            </article>
-
-            <article class="game horizontal">
-                <h2 class="game-title">Card Game Prototype</h2>
-                <div class="game-description">
-                    <p class="small-text"><em>Card Game prototype made for one of Ubisoft big games. Can't show any
-                        screenshots.</em></p>
-                    <p>
-                        There were implemented next features:
-                    </p>
-                    <ul>
-                        <li>Core gameplay</li>
-                        <li>AI opponent with basic strategy using Monte Carlo algorithm</li>
-                        <li>Deck building system</li>
-                        <li>Multiplayer support using Unity Netcode for GameObjects</li>
-                        <li>Matchmaking system with rating</li>
-                    </ul>
-                </div>
-            </article>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="aurora" aria-hidden="true">
+            <span class="aurora__blob aurora__blob--1"></span>
+            <span class="aurora__blob aurora__blob--2"></span>
+            <span class="aurora__blob aurora__blob--3"></span>
         </div>
 
-        <div class="carousel-controls">
-            <button id="prevBtn" class="carousel-button">&larr;</button>
-            <div id="carouselDots" class="carousel-dots"></div>
-            <button id="nextBtn" class="carousel-button">&rarr;</button>
+        <div class="container hero__inner">
+            <div class="hero__text">
+                <p class="eyebrow hero__eyebrow"><span class="pulse-dot"></span>8+ years experience</p>
+                <h1 class="hero__title split" aria-label="Yehor Krasochenko">Yehor Krasochenko</h1>
+                <p class="hero__subtitle">Senior Game Developer <span class="hero__sep">·</span> Unity / C++</p>
+                <div class="hero__actions">
+                    <a class="btn btn--primary" href="#projects">
+                        View projects
+                        <svg class="btn__icon btn__icon--bounce"><use href="#i-arrow-down"/></svg>
+                    </a>
+                    <a class="btn btn--ghost" href="https://github.com/FunkyC0der" target="_blank" rel="noopener">
+                        <svg class="btn__icon"><use href="#i-github"/></svg> GitHub
+                    </a>
+                    <a class="btn btn--ghost" href="https://www.linkedin.com/in/krasochenkodev/" target="_blank" rel="noopener">
+                        <svg class="btn__icon"><use href="#i-linkedin"/></svg> LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero__photo-wrap">
+                <div class="hero__photo">
+                    <img src="assets/profile.jpg" alt="Portrait of Yehor Krasochenko" width="1280" height="1280">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- 01 Projects -->
+    <section class="section" id="projects">
+        <div class="container">
+            <header class="section__head reveal">
+                <span class="section__num">01</span>
+                <h2 class="section__title">Projects</h2>
+                <span class="section__line" aria-hidden="true"></span>
+            </header>
+            <p class="section__lead reveal">Unity projects — click a card for details.</p>
+
+            <div class="bento">
+
+                <article class="project project--wide reveal" style="--area: chomp">
+                    <div class="project__media">
+                        <video muted loop playsinline preload="none" poster="assets/posters/chomp_hero.jpg"
+                               src="assets/chomp_hero.mp4" aria-hidden="true"></video>
+                    </div>
+                    <div class="project__body">
+                        <p class="project__meta">Steam · 2D puzzle game</p>
+                        <h3 class="project__title">Chomp Hero</h3>
+                        <ul class="chips">
+                            <li>Sole Unity engineer</li>
+                            <li>Game architecture</li>
+                            <li>A* level-design tool</li>
+                            <li>Turn-based undo</li>
+                        </ul>
+                    </div>
+                    <a class="project__store" href="https://store.steampowered.com/app/1839010/Chomp_Hero/" target="_blank" rel="noopener">
+                        Steam <svg><use href="#i-arrow-up-right"/></svg>
+                    </a>
+                    <button class="project__open" type="button" aria-label="Open Chomp Hero details"></button>
+                    <template class="project__details">
+                        <p>
+                            Worked as the sole Unity engineer in a small cross-functional team
+                            (Game Designer and Artist/UI/UX), taking full ownership of the technical
+                            implementation of the project.
+                        </p>
+                        <ul class="arrow-list">
+                            <li>
+                                Designed and implemented a scalable and extensible game architecture
+                                supporting multiple unit behaviors, custom tile types (traps, teleports),
+                                and advanced gameplay mechanics such as turn-based undo.
+                            </li>
+                            <li>
+                                Developed an internal level assistance and validation tool based on the
+                                A* pathfinding algorithm to support level design workflows; additionally
+                                experimented with Monte Carlo approaches for alternative solution generation.
+                            </li>
+                            <li>
+                                Integrated Unity Analytics to collect gameplay metrics and support
+                                data-driven iteration during multiple web-based playtests.
+                            </li>
+                            <li>
+                                Implemented UI, VFX, and shader-driven animations using PrimeTween to ensure
+                                smooth, responsive, and polished player feedback.
+                            </li>
+                            <li>
+                                Applied a service-based architecture with dependency injection using
+                                Init(args), improving modularity, testability, and long-term maintainability
+                                of the codebase.
+                            </li>
+                        </ul>
+                    </template>
+                </article>
+
+                <article class="project project--tall reveal" style="--area: fish">
+                    <div class="project__media">
+                        <video muted loop playsinline preload="none" poster="assets/posters/fish_hunt.jpg"
+                               src="assets/fish_hunt.mp4" aria-hidden="true"></video>
+                    </div>
+                    <div class="project__body">
+                        <p class="project__meta">Google Play · Mobile</p>
+                        <h3 class="project__title">Fish Hunt</h3>
+                        <ul class="chips">
+                            <li>Live config pipeline</li>
+                            <li>Spine animation</li>
+                            <li>Custom shaders</li>
+                            <li>DI · VContainer</li>
+                        </ul>
+                    </div>
+                    <a class="project__store" href="https://play.google.com/store/apps/details?id=com.usod.fishhunt&amp;pcampaignid=web_share" target="_blank" rel="noopener">
+                        Google Play <svg><use href="#i-arrow-up-right"/></svg>
+                    </a>
+                    <button class="project__open" type="button" aria-label="Open Fish Hunt details"></button>
+                    <template class="project__details">
+                        <ul class="arrow-list">
+                            <li>
+                                Served as the primary Unity developer in a small team with a
+                                game designer/artist, taking ownership of core technical decisions
+                                and implementation.
+                            </li>
+                            <li>
+                                Implemented character animation pipelines using the Spine editor
+                                and its Unity integration, ensuring smooth runtime performance
+                                and maintainable animation setups.
+                            </li>
+                            <li>
+                                Built a service-oriented architecture with dependency injection
+                                using VContainer, improving modularity and long-term scalability.
+                            </li>
+                            <li>
+                                Designed and implemented a custom data pipeline to import balancing
+                                and configuration data from Google Sheets into ScriptableObjects.
+                                The system supports live config updates on production mobile builds,
+                                enabling designers to iterate on gameplay parameters without
+                                requiring project rebuilds.
+                            </li>
+                            <li>
+                                Integrated Firebase Analytics and the Facebook SDK to support
+                                user behavior tracking and data-driven decision making.
+                            </li>
+                            <li>
+                                Created custom visual effects using Shader Graph, including
+                                diffraction and caustic water effects, with attention to performance
+                                on mobile devices.
+                            </li>
+                        </ul>
+                    </template>
+                </article>
+
+                <article class="project project--tall reveal" style="--area: idle">
+                    <div class="project__media">
+                        <video muted loop playsinline preload="none" poster="assets/posters/atomic_tycoon.jpg"
+                               src="assets/atomic_tycoon.mp4" aria-hidden="true"></video>
+                    </div>
+                    <div class="project__body">
+                        <p class="project__meta">Idle tycoon · 3D</p>
+                        <h3 class="project__title">Idle Tycoon</h3>
+                        <ul class="chips">
+                            <li>Main developer</li>
+                            <li>Service architecture</li>
+                            <li>DI · VContainer</li>
+                        </ul>
+                    </div>
+                    <button class="project__open" type="button" aria-label="Open Idle Tycoon details"></button>
+                    <template class="project__details">
+                        <ul class="arrow-list">
+                            <li>Worked as the main developer in a team with one game designer, one 3d artist and freelance
+                                UI/UX.
+                            </li>
+                            <li>Used <strong>VContainer</strong> for dependency injection and a service‑oriented
+                                architecture.
+                            </li>
+                            <li>Used <strong>DoTween</strong> to create UI and some 3D animations.</li>
+                        </ul>
+                    </template>
+                </article>
+
+                <article class="project reveal" style="--area: match">
+                    <div class="project__media">
+                        <video muted loop playsinline preload="none" poster="assets/posters/card_match.jpg"
+                               src="assets/card_match.mp4" aria-hidden="true"></video>
+                    </div>
+                    <div class="project__body">
+                        <p class="project__meta">Test assignment</p>
+                        <h3 class="project__title">Card Match</h3>
+                        <ul class="chips">
+                            <li>Clean architecture</li>
+                            <li>State machine</li>
+                            <li>DI</li>
+                            <li>Editor tooling</li>
+                        </ul>
+                    </div>
+                    <a class="project__store" href="https://github.com/FunkyC0der/CardMatchGame?tab=readme-ov-file#card-match-game" target="_blank" rel="noopener">
+                        GitHub <svg><use href="#i-arrow-up-right"/></svg>
+                    </a>
+                    <button class="project__open" type="button" aria-label="Open Card Match details"></button>
+                    <template class="project__details">
+                        <p class="muted"><em>Example of one of the test assignments completed:</em></p>
+                        <p>
+                            The <strong>CardMatchGame</strong> project uses <strong>dependency injection</strong> and a
+                            <strong>service-oriented architecture</strong> to ensure modularity and maintainability.
+                        </p>
+                        <p>
+                            It follows the <strong>Single Responsibility Principle</strong> and implements a <strong>state
+                            machine</strong> for managing game flow.
+                        </p>
+                        <p>
+                            Additionally, the <strong>PrimeTween</strong> library is used for smooth animations, and an
+                            <strong>editor utility</strong> is included to streamline development.
+                        </p>
+                        <p class="muted">
+                            For full details, see the <a href="https://github.com/FunkyC0der/CardMatchGame?tab=readme-ov-file#card-match-game" target="_blank" rel="noopener">README</a>.
+                        </p>
+                    </template>
+                </article>
+
+                <article class="project project--wide reveal" style="--area: farm">
+                    <div class="project__media">
+                        <img src="assets/farm_game.jpg" alt="Farm Game screenshots" loading="lazy" width="2868" height="1320">
+                    </div>
+                    <div class="project__body">
+                        <p class="project__meta">App Store · Mobile</p>
+                        <h3 class="project__title">Farm Game</h3>
+                        <ul class="chips">
+                            <li>In-app purchases</li>
+                            <li>Cloud Code backend</li>
+                            <li>Ads mediation</li>
+                            <li>Offline progression</li>
+                        </ul>
+                    </div>
+                    <a class="project__store" href="https://apps.apple.com/ua/app/goldenwood/id6747716127?l=uk" target="_blank" rel="noopener">
+                        App Store <svg><use href="#i-arrow-up-right"/></svg>
+                    </a>
+                    <button class="project__open" type="button" aria-label="Open Farm Game details"></button>
+                    <template class="project__details">
+                        <p class="muted">
+                            <em>The original template was significantly reworked and extended to meet
+                                the client’s specific gameplay and technical requirements.</em>
+                        </p>
+                        <p>Key features and systems implemented:</p>
+                        <ul class="arrow-list">
+                            <li>
+                                Implemented multiple gameplay systems, including planting mechanics
+                                with growth stages and offline progression calculations to ensure
+                                consistent game state updates.
+                            </li>
+                            <li>
+                                Developed an in-game shop with purchases powered by Unity In-App
+                                Purchasing, supporting monetization on mobile platforms.
+                            </li>
+                            <li>
+                                Designed and integrated a referral system using Unity Cloud Save for
+                                persistent data storage and Unity Cloud Code for server-side data
+                                processing and validation.
+                            </li>
+                            <li>
+                                Integrated advertising solutions using Unity Ads Monetization and
+                                ironSource, ensuring stable ad delivery and optimized monetization flow.
+                            </li>
+                            <li>
+                                Implemented a loot box system with a roulette-style opening experience,
+                                inspired by CS:GO, focusing on clear visual feedback and user engagement.
+                            </li>
+                        </ul>
+                    </template>
+                </article>
+
+                <article class="project project--nda reveal" style="--area: proto">
+                    <div class="project__media project__pattern" aria-hidden="true">
+                        <span class="pattern-card pattern-card--1"></span>
+                        <span class="pattern-card pattern-card--2"></span>
+                        <span class="pattern-card pattern-card--3"></span>
+                    </div>
+                    <div class="project__body">
+                        <p class="project__meta"><svg class="meta-icon"><use href="#i-lock"/></svg> Ubisoft · NDA</p>
+                        <h3 class="project__title">Card Game Prototype</h3>
+                        <ul class="chips">
+                            <li>Multiplayer · Netcode</li>
+                            <li>Monte Carlo AI</li>
+                            <li>Rating matchmaking</li>
+                            <li>Deck building</li>
+                        </ul>
+                    </div>
+                    <button class="project__open" type="button" aria-label="Open Card Game Prototype details"></button>
+                    <template class="project__details">
+                        <p class="muted"><em>Card Game prototype made for one of Ubisoft big games. Can't show any
+                            screenshots.</em></p>
+                        <p>There were implemented next features:</p>
+                        <ul class="arrow-list">
+                            <li>Core gameplay</li>
+                            <li>AI opponent with basic strategy using Monte Carlo algorithm</li>
+                            <li>Deck building system</li>
+                            <li>Multiplayer support using Unity Netcode for GameObjects</li>
+                            <li>Matchmaking system with rating</li>
+                        </ul>
+                    </template>
+                </article>
+            </div>
         </div>
     </section>
 
-    <!-- Content Cards -->
-    <section class="content-card">
-        <h2>Ubisoft – Senior C++ Game Developer | Unity Developer - 6+ years</h2>
-        <h3>Beyond Good &amp; Evil 2</h3>
-        <ul>
-            <li>Developed prototypes for both multiplayer and single-player mini-games in Unity, utilizing Netcode,
-                UGUI, and a custom-built prediction AI for board games.
-            </li>
-            <li>Worked on mini games using an internal C++ game engine.</li>
-            <li>Utilized network concepts such as RPCs, authority, and replication.</li>
-            <li>Applied data-oriented design principles to implement gameplay mechanics.</li>
-        </ul>
-        <h3>FarCry 6 Project</h3>
-        <ul>
-            <li>Mainly responsible for maintaining UI code.</li>
-            <li>Additionally worked on Photomode, Accessibility, and custom Corsair keyboard support.</li>
-        </ul>
+    <!-- 02 Experience -->
+    <section class="section" id="experience">
+        <div class="container">
+            <header class="section__head reveal">
+                <span class="section__num">02</span>
+                <h2 class="section__title">Experience</h2>
+                <span class="section__line" aria-hidden="true"></span>
+            </header>
+
+            <ol class="timeline">
+                <li class="tl-item">
+                    <span class="tl-dot" aria-hidden="true"></span>
+                    <div class="tl-side reveal">
+                        <p class="tl-duration">6+ years</p>
+                        <h3 class="tl-company">Ubisoft</h3>
+                        <p class="tl-role">Senior C++ Game Developer | Unity Developer</p>
+                    </div>
+                    <div class="tl-content">
+                        <div class="tl-card reveal">
+                            <h4 class="tl-project">Beyond Good &amp; Evil 2</h4>
+                            <ul class="arrow-list">
+                                <li>Developed prototypes for both multiplayer and single-player mini-games in Unity, utilizing Netcode,
+                                    UGUI, and a custom-built prediction AI for board games.
+                                </li>
+                                <li>Worked on mini games using an internal C++ game engine.</li>
+                                <li>Utilized network concepts such as RPCs, authority, and replication.</li>
+                                <li>Applied data-oriented design principles to implement gameplay mechanics.</li>
+                            </ul>
+                        </div>
+                        <div class="tl-card reveal">
+                            <h4 class="tl-project">Far Cry 6</h4>
+                            <ul class="arrow-list">
+                                <li>Mainly responsible for maintaining UI code.</li>
+                                <li>Additionally worked on Photomode, Accessibility, and custom Corsair keyboard support.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="tl-item">
+                    <span class="tl-dot" aria-hidden="true"></span>
+                    <div class="tl-side reveal">
+                        <p class="tl-duration">6 months</p>
+                        <h3 class="tl-company">Pingle Studio</h3>
+                        <p class="tl-role">Unreal Engine Developer</p>
+                    </div>
+                    <div class="tl-content">
+                        <div class="tl-card reveal">
+                            <h4 class="tl-project">PC RTS Game Prototype</h4>
+                            <ul class="arrow-list">
+                                <li>Developed a fully functional 3D RTS game as the main developer.</li>
+                                <li>Led the design and implementation of building and unit systems, battle mechanics, unit control, and
+                                    networking.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="tl-item">
+                    <span class="tl-dot" aria-hidden="true"></span>
+                    <div class="tl-side reveal">
+                        <p class="tl-duration">1 year 11 months</p>
+                        <h3 class="tl-company">Apriorit</h3>
+                        <p class="tl-role">C++ Software Developer</p>
+                    </div>
+                    <div class="tl-content">
+                        <div class="tl-card reveal">
+                            <h4 class="tl-project">Cyber security stuff ;)</h4>
+                            <ul class="arrow-list">
+                                <li>
+                                    Worked in the Windows kernel, maintaining projects for user-kernel communication. Tasks included data
+                                    serialization, system monitoring via kernel callbacks, and using kernel APIs for process/thread and
+                                    registry management.
+                                </li>
+                                <li>Parsed Portable Executable (PE) files.</li>
+                                <li>Developed a project for hooking Windows user APIs.</li>
+                                <li>Created a C++ DLL for a C# project using marshaling.</li>
+                                <li>Enabled communication between a Windows service (REST SDK in C++) and a Node.js web service.</li>
+                                <li>
+                                    Developed a secure, cross-platform messenger (Linux/Windows) using the Qt framework, network sockets,
+                                    SQLite, and TLS.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
     </section>
 
-    <section class="content-card">
-        <h2>Pingle Studio – Unreal Engine Developer - 6 months</h2>
-        <h3>PC RTS Game Prototype</h3>
-        <ul>
-            <li>Developed a fully functional 3D RTS game as the main developer.</li>
-            <li>Led the design and implementation of building and unit systems, battle mechanics, unit control, and
-                networking.
-            </li>
-        </ul>
-    </section>
+    <!-- 03 Education -->
+    <section class="section" id="education">
+        <div class="container">
+            <header class="section__head reveal">
+                <span class="section__num">03</span>
+                <h2 class="section__title">Education</h2>
+                <span class="section__line" aria-hidden="true"></span>
+            </header>
 
-    <section class="content-card">
-        <h2>Apriorit - C++ Software Developer - 1 year 11 months</h2>
-        <h3>Cyber security stuff ;)</h3>
-        <ul>
-            <li>
-                Worked in the Windows kernel, maintaining projects for user-kernel communication. Tasks included data
-                serialization, system monitoring via kernel callbacks, and using kernel APIs for process/thread and
-                registry management.
-            </li>
-            <li>Parsed Portable Executable (PE) files.</li>
-            <li>Developed a project for hooking Windows user APIs.</li>
-            <li>Created a C++ DLL for a C# project using marshaling.</li>
-            <li>Enabled communication between a Windows service (REST SDK in C++) and a Node.js web service.</li>
-            <li>
-                Developed a secure, cross-platform messenger (Linux/Windows) using the Qt framework, network sockets,
-                SQLite, and TLS.
-            </li>
-        </ul>
-    </section>
+            <div class="edu-grid">
+                <article class="edu-card reveal">
+                    <p class="edu-card__kind">Degree</p>
+                    <h3 class="edu-card__title">Master's Degree in Computer Science</h3>
+                    <p class="edu-card__org">Dnipro University of Technology</p>
+                </article>
+                <article class="edu-card reveal">
+                    <p class="edu-card__kind">Course</p>
+                    <h3 class="edu-card__title">"Architecture Unity Games"</h3>
+                    <p class="edu-card__org">K Syndicate</p>
+                    <a class="edu-card__link" href="https://lms.k-syndicate.school/architecture-unity-games/" target="_blank" rel="noopener">
+                        Course page <svg><use href="#i-arrow-up-right"/></svg>
+                    </a>
+                </article>
+            </div>
 
-    <section class="content-card">
-        <h2>Education</h2>
-        <ul>
-            <li>Master's Degree in Computer Science, Dnipro University of Technology</li>
-            <li>K Syndicate "Architecture Unity Games" course – <a
-                    href="https://lms.k-syndicate.school/architecture-unity-games/">Link</a></li>
-        </ul>
-        <h3>Books</h3>
-        <ul>
-            <li>Game Programming Patterns</li>
-            <li>Design Patterns: Elements of Reusable Object-Oriented Software</li>
-            <li>Effective Modern C++: 42 Specific Ways to Improve Your Use of C++11 and C++14 – Scott Meyers</li>
-            <li>C++ Coding Standards: 101 Rules, Guidelines, and Best Practices – Herb Sutter &amp; Andrei
-                Alexandrescu
-            </li>
-            <li>Effective STL: 50 Specific Ways to Improve Your Use of the Standard Template Library – Scott Meyers</li>
-            <li>C++ Concurrency in Action: Practical Multithreading – Anthony Williams</li>
-        </ul>
+            <h3 class="subhead reveal">Books</h3>
+            <ul class="books">
+                <li class="book reveal" style="--hue: 250">
+                    <span class="book__title">Game Programming Patterns</span>
+                    <span class="book__author">Robert Nystrom</span>
+                </li>
+                <li class="book reveal" style="--hue: 200">
+                    <span class="book__title">Design Patterns</span>
+                    <span class="book__sub">Elements of Reusable Object-Oriented Software</span>
+                    <span class="book__author">Gang of Four</span>
+                </li>
+                <li class="book reveal" style="--hue: 320">
+                    <span class="book__title">Effective Modern C++</span>
+                    <span class="book__sub">42 Specific Ways to Improve Your Use of C++11 and C++14</span>
+                    <span class="book__author">Scott Meyers</span>
+                </li>
+                <li class="book reveal" style="--hue: 170">
+                    <span class="book__title">C++ Coding Standards</span>
+                    <span class="book__sub">101 Rules, Guidelines, and Best Practices</span>
+                    <span class="book__author">Herb Sutter &amp; Andrei Alexandrescu</span>
+                </li>
+                <li class="book reveal" style="--hue: 25">
+                    <span class="book__title">Effective STL</span>
+                    <span class="book__sub">50 Specific Ways to Improve Your Use of the Standard Template Library</span>
+                    <span class="book__author">Scott Meyers</span>
+                </li>
+                <li class="book reveal" style="--hue: 280">
+                    <span class="book__title">C++ Concurrency in Action</span>
+                    <span class="book__sub">Practical Multithreading</span>
+                    <span class="book__author">Anthony Williams</span>
+                </li>
+            </ul>
+        </div>
     </section>
 </main>
 
-<footer>
-    <p>© 2025 Yehor Krasochenko | <a href="https://github.com/FunkyC0der">GitHub</a> | <a
-            href="https://www.linkedin.com/in/krasochenkodev/">LinkedIn</a></p>
+<footer class="footer">
+    <div class="container footer__inner">
+        <p class="footer__copy">© 2026 Yehor Krasochenko</p>
+        <div class="footer__links">
+            <a href="https://github.com/FunkyC0der" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/krasochenkodev/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="icon-btn" href="#top" aria-label="Back to top"><svg><use href="#i-arrow-up"/></svg></a>
+        </div>
+    </div>
 </footer>
+
+<!-- Модалка проєкту -->
+<dialog class="modal" id="project-modal" aria-labelledby="modal-title">
+    <div class="modal__panel">
+        <button class="icon-btn modal__close" type="button" aria-label="Close"><svg><use href="#i-close"/></svg></button>
+        <div class="modal__media"></div>
+        <div class="modal__body">
+            <p class="project__meta modal__meta"></p>
+            <h3 class="modal__title" id="modal-title"></h3>
+            <ul class="chips modal__chips"></ul>
+            <div class="modal__content"></div>
+            <div class="modal__links"></div>
+        </div>
+    </div>
+</dialog>
 
 <script src="script.js"></script>
 </body>
